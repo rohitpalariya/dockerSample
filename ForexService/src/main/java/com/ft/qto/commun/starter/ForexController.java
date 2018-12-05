@@ -11,19 +11,19 @@ public class ForexController {
   @Autowired
   private Environment environment;
   
-  @Autowired
-  private ExchangeValueRepository repository;
+  //@Autowired
+  //private ExchangeValueRepository repository;
   
   @GetMapping("/currency-exchange/from/{from}/to/{to}")
   public ExchangeValue retrieveExchangeValue
     (@PathVariable String from, @PathVariable String to){
-    System.out.println("Forxe output is "+from+" and "+to);
-    ExchangeValue exchangeValue = 
-        repository.findByFromAndTo(from, to);
+    //System.out.println("Forxe output is "+from+" and "+to);
+    //ExchangeValue exchangeValue = 
+   //     repository.findByFromAndTo(from, to);
     
-    exchangeValue.setPort(
-        Integer.parseInt(environment.getProperty("local.server.port")));
+   // exchangeValue.setPort(
+    //    Integer.parseInt(environment.getProperty("local.server.port")));
     
-    return exchangeValue;
+    return "Done";
   }
 }
